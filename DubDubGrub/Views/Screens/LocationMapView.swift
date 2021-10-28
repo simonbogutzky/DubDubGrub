@@ -18,15 +18,19 @@ struct LocationMapView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Image("ddg-map-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 70)
-                    .shadow(radius: 10)
-                
+                Logo().shadow(radius: 10)
                 Spacer()
             }
         }
+    }
+}
+
+struct Logo: View {
+    var body: some View {
+        Image("ddg-map-logo")
+            .resizable()
+            .scaledToFit()
+            .frame(height: 70)
     }
 }
 
