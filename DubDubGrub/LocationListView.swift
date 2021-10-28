@@ -28,11 +28,11 @@ struct LocationListView: View {
                                 .minimumScaleFactor(0.75)
                             
                             HStack {
-                                AvertarView()
-                                AvertarView()
-                                AvertarView()
-                                AvertarView()
-                                AvertarView()
+                                AvertarView(size: 35)
+                                AvertarView(size: 35)
+                                AvertarView(size: 35)
+                                AvertarView(size: 35)
+                                AvertarView(size: 35)
                             }
                         }
                         .padding(.leading)
@@ -47,11 +47,14 @@ struct LocationListView: View {
 }
 
 struct AvertarView: View {
+    
+    var size: Double
+    
     var body: some View {
         Image("default-avatar")
             .resizable()
             .scaledToFit()
-            .frame(width: 35, height: 35)
+            .frame(width: size, height: size)
             .clipShape(Circle())
     }
 }

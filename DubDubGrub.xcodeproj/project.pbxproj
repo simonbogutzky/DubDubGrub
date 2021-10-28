@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
 		D373BDE3272A786800A8A502 /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */; };
 		D373BDE7272A786B00A8A502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE6272A786B00A8A502 /* Assets.xcassets */; };
 		D373BDEA272A786B00A8A502 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE9272A786B00A8A502 /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		D373BDDF272A786800A8A502 /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
 		D373BDE6272A786B00A8A502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				D373BDF4272A829D00A8A502 /* LocationMapView.swift */,
 				D373BDF6272A82C600A8A502 /* LocationListView.swift */,
 				D373BDF8272A82E600A8A502 /* ProfileView.swift */,
+				D32895A9272A908900A93CC4 /* LocationDetailView.swift */,
 			);
 			path = DubDubGrub;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				D373BDE3272A786800A8A502 /* DubDubGrubApp.swift in Sources */,
 				D373BDF5272A829D00A8A502 /* LocationMapView.swift in Sources */,
 				D373BDF7272A82C600A8A502 /* LocationListView.swift in Sources */,
+				D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */,
 				D373BDF3272A827100A8A502 /* AppTabView.swift in Sources */,
 				D373BDF9272A82E600A8A502 /* ProfileView.swift in Sources */,
 				D373BDF1272A822400A8A502 /* Color+Ext.swift in Sources */,
