@@ -27,6 +27,7 @@
 		D375DA54272BCDC900770BBB /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA53272BCDC800770BBB /* CloudKitManager.swift */; };
 		D375DA56272BCEDF00770BBB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA55272BCEDF00770BBB /* Constants.swift */; };
 		D375DA58272BD1E800770BBB /* CKRecord+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA57272BD1E800770BBB /* CKRecord+Ext.swift */; };
+		D375DA5A272BEC0200770BBB /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA59272BEC0200770BBB /* AlertItem.swift */; };
 		D3F26B82272B05A900966744 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F26B81272B05A900966744 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		D375DA53272BCDC800770BBB /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		D375DA55272BCEDF00770BBB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D375DA57272BD1E800770BBB /* CKRecord+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Ext.swift"; sourceTree = "<group>"; };
+		D375DA59272BEC0200770BBB /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		D3F26B81272B05A900966744 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			children = (
 				D3046A98272AE1FA009A1552 /* Extensions */,
 				D375DA53272BCDC800770BBB /* CloudKitManager.swift */,
+				D375DA59272BEC0200770BBB /* AlertItem.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				D373BDF9272A82E600A8A502 /* ProfileView.swift in Sources */,
 				D3046A8F272ADD08009A1552 /* LocationCell.swift in Sources */,
 				D375DA54272BCDC900770BBB /* CloudKitManager.swift in Sources */,
+				D375DA5A272BEC0200770BBB /* AlertItem.swift in Sources */,
 				D3046A95272AE0B8009A1552 /* View+Ext.swift in Sources */,
 				D3046A91272ADD4B009A1552 /* AvatarView.swift in Sources */,
 				D375DA58272BD1E800770BBB /* CKRecord+Ext.swift in Sources */,
