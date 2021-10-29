@@ -24,6 +24,9 @@
 		D373BDF9272A82E600A8A502 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373BDF8272A82E600A8A502 /* ProfileView.swift */; };
 		D375DA4E272BC13A00770BBB /* DDGProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA4D272BC13A00770BBB /* DDGProfile.swift */; };
 		D375DA50272BC29B00770BBB /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA4F272BC29B00770BBB /* MockData.swift */; };
+		D375DA54272BCDC900770BBB /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA53272BCDC800770BBB /* CloudKitManager.swift */; };
+		D375DA56272BCEDF00770BBB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA55272BCEDF00770BBB /* Constants.swift */; };
+		D375DA58272BD1E800770BBB /* CKRecord+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA57272BD1E800770BBB /* CKRecord+Ext.swift */; };
 		D3F26B82272B05A900966744 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F26B81272B05A900966744 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		D373BDF8272A82E600A8A502 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D375DA4D272BC13A00770BBB /* DDGProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGProfile.swift; sourceTree = "<group>"; };
 		D375DA4F272BC29B00770BBB /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		D375DA53272BCDC800770BBB /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		D375DA55272BCEDF00770BBB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D375DA57272BD1E800770BBB /* CKRecord+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Ext.swift"; sourceTree = "<group>"; };
 		D3F26B81272B05A900966744 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +73,8 @@
 			children = (
 				D3046A94272AE0B8009A1552 /* View+Ext.swift */,
 				D373BDF0272A822400A8A502 /* Color+Ext.swift */,
+				D375DA55272BCEDF00770BBB /* Constants.swift */,
+				D375DA57272BD1E800770BBB /* CKRecord+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -139,9 +147,9 @@
 		D373BDE1272A786800A8A502 /* DubDubGrub */ = {
 			isa = PBXGroup;
 			children = (
+				D375DA51272BCD8E00770BBB /* Utilities */,
 				D3F26B80272B059100966744 /* Model */,
 				D3046AA0272AE679009A1552 /* DubDubGrub.entitlements */,
-				D3046A98272AE1FA009A1552 /* Extensions */,
 				D3046A9B272AE431009A1552 /* Views */,
 				D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */,
 				D373BDE6272A786B00A8A502 /* Assets.xcassets */,
@@ -156,6 +164,15 @@
 				D373BDE9272A786B00A8A502 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D375DA51272BCD8E00770BBB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D3046A98272AE1FA009A1552 /* Extensions */,
+				D375DA53272BCDC800770BBB /* CloudKitManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D3F26B80272B059100966744 /* Model */ = {
@@ -239,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D373BDE3272A786800A8A502 /* DubDubGrubApp.swift in Sources */,
+				D375DA56272BCEDF00770BBB /* Constants.swift in Sources */,
 				D373BDF5272A829D00A8A502 /* LocationMapView.swift in Sources */,
 				D373BDF7272A82C600A8A502 /* LocationListView.swift in Sources */,
 				D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */,
@@ -248,8 +266,10 @@
 				D3F26B82272B05A900966744 /* DDGLocation.swift in Sources */,
 				D373BDF9272A82E600A8A502 /* ProfileView.swift in Sources */,
 				D3046A8F272ADD08009A1552 /* LocationCell.swift in Sources */,
+				D375DA54272BCDC900770BBB /* CloudKitManager.swift in Sources */,
 				D3046A95272AE0B8009A1552 /* View+Ext.swift in Sources */,
 				D3046A91272ADD4B009A1552 /* AvatarView.swift in Sources */,
+				D375DA58272BD1E800770BBB /* CKRecord+Ext.swift in Sources */,
 				D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */,
 				D373BDF1272A822400A8A502 /* Color+Ext.swift in Sources */,
 				D3046A93272AE09C009A1552 /* CustomModifiers.swift in Sources */,
@@ -381,6 +401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DubDubGrub/DubDubGrub.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DubDubGrub/Preview Content\"";
@@ -399,6 +420,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simonbogutzky.DubDubGrub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DubDubGrub/DubDubGrub.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DubDubGrub/Preview Content\"";
@@ -429,6 +452,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simonbogutzky.DubDubGrub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
