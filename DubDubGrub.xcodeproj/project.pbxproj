@@ -31,6 +31,9 @@
 		D375DA5D272BF01700770BBB /* LocationMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA5C272BF01700770BBB /* LocationMapViewModel.swift */; };
 		D375DA60272BF29200770BBB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA5F272BF29200770BBB /* LocationManager.swift */; };
 		D375DA62272BF96500770BBB /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375DA61272BF96500770BBB /* CKAsset+Ext.swift */; };
+		D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3036272C16FB00356C3E /* OnboardView.swift */; };
+		D37D3039272C179300356C3E /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3038272C179300356C3E /* LogoView.swift */; };
+		D37D303C272C1BAD00356C3E /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D303B272C1BAD00356C3E /* XDismissButton.swift */; };
 		D3F26B82272B05A900966744 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F26B81272B05A900966744 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,9 @@
 		D375DA5C272BF01700770BBB /* LocationMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewModel.swift; sourceTree = "<group>"; };
 		D375DA5F272BF29200770BBB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D375DA61272BF96500770BBB /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
+		D37D3036272C16FB00356C3E /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		D37D3038272C179300356C3E /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		D37D303B272C1BAD00356C3E /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		D3F26B81272B05A900966744 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +100,8 @@
 				D3046A9E272AE44C009A1552 /* CustomViews */,
 				D3046A9D272AE445009A1552 /* Cells */,
 				D3046A9C272AE439009A1552 /* Screens */,
+				D37D3036272C16FB00356C3E /* OnboardView.swift */,
+				D37D3038272C179300356C3E /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,7 +129,7 @@
 		D3046A9E272AE44C009A1552 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				D3046A99272AE20C009A1552 /* DDGButton.swift */,
+				D37D303A272C1B8F00356C3E /* Buttons */,
 				D3046A90272ADD4B009A1552 /* AvatarView.swift */,
 			);
 			path = CustomViews;
@@ -201,6 +209,15 @@
 				D375DA5F272BF29200770BBB /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		D37D303A272C1B8F00356C3E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D3046A99272AE20C009A1552 /* DDGButton.swift */,
+				D37D303B272C1BAD00356C3E /* XDismissButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		D3F26B80272B059100966744 /* Model */ = {
@@ -296,12 +313,15 @@
 				D373BDF9272A82E600A8A502 /* ProfileView.swift in Sources */,
 				D3046A8F272ADD08009A1552 /* LocationCell.swift in Sources */,
 				D375DA54272BCDC900770BBB /* CloudKitManager.swift in Sources */,
+				D37D3039272C179300356C3E /* LogoView.swift in Sources */,
+				D37D303C272C1BAD00356C3E /* XDismissButton.swift in Sources */,
 				D375DA5A272BEC0200770BBB /* AlertItem.swift in Sources */,
 				D3046A95272AE0B8009A1552 /* View+Ext.swift in Sources */,
 				D3046A91272ADD4B009A1552 /* AvatarView.swift in Sources */,
 				D375DA58272BD1E800770BBB /* CKRecord+Ext.swift in Sources */,
 				D375DA60272BF29200770BBB /* LocationManager.swift in Sources */,
 				D375DA62272BF96500770BBB /* CKAsset+Ext.swift in Sources */,
+				D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */,
 				D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */,
 				D373BDF1272A822400A8A502 /* Color+Ext.swift in Sources */,
 				D3046A93272AE09C009A1552 /* CustomModifiers.swift in Sources */,

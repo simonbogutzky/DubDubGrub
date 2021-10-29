@@ -22,7 +22,7 @@ struct LocationMapView: View {
             .ignoresSafeArea()
             
             VStack {
-                Logo().shadow(radius: 10)
+                LogoView(frameWidth: 125).shadow(radius: 10)
                 Spacer()
             }
         }
@@ -35,15 +35,6 @@ struct LocationMapView: View {
                 viewModel.getLocations(for: locationManager)
             }
         }
-    }
-}
-
-struct Logo: View {
-    var body: some View {
-        Image("ddg-map-logo")
-            .resizable()
-            .scaledToFit()
-            .frame(height: 70)
     }
 }
 
