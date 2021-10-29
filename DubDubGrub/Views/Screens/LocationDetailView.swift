@@ -13,17 +13,19 @@ struct LocationDetailView: View {
                    GridItem(.flexible()),
                    GridItem(.flexible())]
     
+    var location: DDGLocation
+    
     var body: some View {
         VStack {
             BannerImageView(imageName: "default-banner-asset")
             
             HStack {
-                AddressView(address: "123 Main Street")
+                AddressView(address: location.address)
                 Spacer()
             }
             .padding(.horizontal)
             
-            DescriptionView(text: "This is a test description. This is a test description. This is a test description. This is a test description. This is a test description. ")
+            DescriptionView(text: location.description)
             
             ZStack {
                 Capsule()
@@ -37,7 +39,7 @@ struct LocationDetailView: View {
                         LocationActionButton(color: .brandPrimary, imageName: "location.fill")
                     }
                     
-                    Link(destination: URL(string: "https://www.applecom")!, label: {
+                    Link(destination: URL(string: location.websiteURL)!, label: {
                         LocationActionButton(color: .brandPrimary, imageName: "network")
                     })
                     
@@ -70,7 +72,7 @@ struct LocationDetailView: View {
             
             Spacer()
         }
-        .navigationTitle("Location Name")
+        .navigationTitle(location.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -147,7 +149,7 @@ struct DescriptionView: View {
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LocationDetailView()
+            LocationDetailView(location: DDGLocation(record: MockData.location))
         }
     }
 }

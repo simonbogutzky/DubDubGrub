@@ -31,7 +31,7 @@ struct DDGLocation {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         name = record[DDGLocation.kName] as? String ?? "N/A"
-        description = record[DDGLocation.kName] as? String ?? "N/A"
+        description = record[DDGLocation.kDescription] as? String ?? "N/A"
         squareAsset = record[DDGLocation.kSquareAsset] as? CKAsset
         bannerAsset = record[DDGLocation.kBannerAsset] as? CKAsset
         address = record[DDGLocation.kAddress] as? String ?? "N/A"
