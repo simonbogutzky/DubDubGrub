@@ -34,6 +34,7 @@
 		D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3036272C16FB00356C3E /* OnboardView.swift */; };
 		D37D3039272C179300356C3E /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3038272C179300356C3E /* LogoView.swift */; };
 		D37D303C272C1BAD00356C3E /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D303B272C1BAD00356C3E /* XDismissButton.swift */; };
+		D3ADCC94272C46DF008BF804 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADCC93272C46DF008BF804 /* PhotoPicker.swift */; };
 		D3F26B82272B05A900966744 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F26B81272B05A900966744 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		D37D3036272C16FB00356C3E /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		D37D3038272C179300356C3E /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		D37D303B272C1BAD00356C3E /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		D3ADCC93272C46DF008BF804 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		D3F26B81272B05A900966744 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 		D3046A9E272AE44C009A1552 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D3ADCC92272C46BA008BF804 /* UIKit Components */,
 				D37D303A272C1B8F00356C3E /* Buttons */,
 				D3046A90272ADD4B009A1552 /* AvatarView.swift */,
 			);
@@ -218,6 +221,14 @@
 				D37D303B272C1BAD00356C3E /* XDismissButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D3ADCC92272C46BA008BF804 /* UIKit Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3ADCC93272C46DF008BF804 /* PhotoPicker.swift */,
+			);
+			path = "UIKit Components";
 			sourceTree = "<group>";
 		};
 		D3F26B80272B059100966744 /* Model */ = {
@@ -310,6 +321,7 @@
 				D373BDF3272A827100A8A502 /* AppTabView.swift in Sources */,
 				D375DA4E272BC13A00770BBB /* DDGProfile.swift in Sources */,
 				D3F26B82272B05A900966744 /* DDGLocation.swift in Sources */,
+				D3ADCC94272C46DF008BF804 /* PhotoPicker.swift in Sources */,
 				D373BDF9272A82E600A8A502 /* ProfileView.swift in Sources */,
 				D3046A8F272ADD08009A1552 /* LocationCell.swift in Sources */,
 				D375DA54272BCDC900770BBB /* CloudKitManager.swift in Sources */,
