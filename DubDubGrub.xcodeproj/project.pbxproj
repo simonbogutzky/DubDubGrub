@@ -16,6 +16,7 @@
 		D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31589A0272D153700E0CEDE /* UIImage+Ext.swift */; };
 		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
 		D36F1C15272D607800765F7B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F1C14272D607800765F7B /* ProfileViewModel.swift */; };
+		D36F1C17272D740D00765F7B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F1C16272D740D00765F7B /* LoadingView.swift */; };
 		D373BDE3272A786800A8A502 /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */; };
 		D373BDE7272A786B00A8A502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE6272A786B00A8A502 /* Assets.xcassets */; };
 		D373BDEA272A786B00A8A502 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE9272A786B00A8A502 /* Preview Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		D31589A0272D153700E0CEDE /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		D36F1C14272D607800765F7B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D36F1C16272D740D00765F7B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D373BDDF272A786800A8A502 /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
 		D373BDE6272A786B00A8A502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D3046A9C272AE439009A1552 /* Screens */,
 				D37D3036272C16FB00356C3E /* OnboardView.swift */,
 				D37D3038272C179300356C3E /* LogoView.swift */,
+				D36F1C16272D740D00765F7B /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				D375DA62272BF96500770BBB /* CKAsset+Ext.swift in Sources */,
 				D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */,
 				D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */,
+				D36F1C17272D740D00765F7B /* LoadingView.swift in Sources */,
 				D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */,
 				D373BDF1272A822400A8A502 /* Color+Ext.swift in Sources */,
 				D3046A93272AE09C009A1552 /* CustomModifiers.swift in Sources */,
