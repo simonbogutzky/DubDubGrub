@@ -15,6 +15,7 @@ final class LocationDetailViewModel: ObservableObject {
                    GridItem(.flexible())]
     
     @Published var alertItem: AlertItem?
+    @Published var isShowingProfileModal = false
     
     var location: DDGLocation
     
