@@ -15,6 +15,7 @@
 		D3046AA3272AE690009A1552 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3046AA2272AE690009A1552 /* CloudKit.framework */; };
 		D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31589A0272D153700E0CEDE /* UIImage+Ext.swift */; };
 		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
+		D36F1C15272D607800765F7B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F1C14272D607800765F7B /* ProfileViewModel.swift */; };
 		D373BDE3272A786800A8A502 /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */; };
 		D373BDE7272A786B00A8A502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE6272A786B00A8A502 /* Assets.xcassets */; };
 		D373BDEA272A786B00A8A502 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE9272A786B00A8A502 /* Preview Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		D3046AA2272AE690009A1552 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D31589A0272D153700E0CEDE /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		D36F1C14272D607800765F7B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D373BDDF272A786800A8A502 /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
 		D373BDE6272A786B00A8A502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,11 +116,11 @@
 		D3046A9C272AE439009A1552 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D36F1C13272D606000765F7B /* ProfileView */,
 				D375DA5B272BEFF200770BBB /* LocationMapView */,
 				D373BDF2272A827100A8A502 /* AppTabView.swift */,
 				D373BDF6272A82C600A8A502 /* LocationListView.swift */,
 				D32895A9272A908900A93CC4 /* LocationDetailView.swift */,
-				D373BDF8272A82E600A8A502 /* ProfileView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -147,6 +149,15 @@
 				D3046AA2272AE690009A1552 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D36F1C13272D606000765F7B /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				D36F1C14272D607800765F7B /* ProfileViewModel.swift */,
+				D373BDF8272A82E600A8A502 /* ProfileView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		D373BDD6272A786800A8A502 = {
@@ -320,6 +331,7 @@
 				D373BDF7272A82C600A8A502 /* LocationListView.swift in Sources */,
 				D375DA5D272BF01700770BBB /* LocationMapViewModel.swift in Sources */,
 				D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */,
+				D36F1C15272D607800765F7B /* ProfileViewModel.swift in Sources */,
 				D375DA50272BC29B00770BBB /* MockData.swift in Sources */,
 				D373BDF3272A827100A8A502 /* AppTabView.swift in Sources */,
 				D375DA4E272BC13A00770BBB /* DDGProfile.swift in Sources */,
