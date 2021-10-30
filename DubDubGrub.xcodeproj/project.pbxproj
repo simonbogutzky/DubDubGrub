@@ -13,6 +13,7 @@
 		D3046A95272AE0B8009A1552 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3046A94272AE0B8009A1552 /* View+Ext.swift */; };
 		D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3046A99272AE20C009A1552 /* DDGButton.swift */; };
 		D3046AA3272AE690009A1552 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3046AA2272AE690009A1552 /* CloudKit.framework */; };
+		D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31589A0272D153700E0CEDE /* UIImage+Ext.swift */; };
 		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
 		D373BDE3272A786800A8A502 /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */; };
 		D373BDE7272A786B00A8A502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D373BDE6272A786B00A8A502 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		D3046A99272AE20C009A1552 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 		D3046AA0272AE679009A1552 /* DubDubGrub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DubDubGrub.entitlements; sourceTree = "<group>"; };
 		D3046AA2272AE690009A1552 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D31589A0272D153700E0CEDE /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		D373BDDF272A786800A8A502 /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D373BDE2272A786800A8A502 /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D373BDF0272A822400A8A502 /* Color+Ext.swift */,
 				D375DA57272BD1E800770BBB /* CKRecord+Ext.swift */,
 				D375DA61272BF96500770BBB /* CKAsset+Ext.swift */,
+				D31589A0272D153700E0CEDE /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				D375DA62272BF96500770BBB /* CKAsset+Ext.swift in Sources */,
 				D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */,
 				D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */,
+				D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */,
 				D373BDF1272A822400A8A502 /* Color+Ext.swift in Sources */,
 				D3046A93272AE09C009A1552 /* CustomModifiers.swift in Sources */,
 			);
