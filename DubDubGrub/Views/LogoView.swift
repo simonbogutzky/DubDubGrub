@@ -12,7 +12,7 @@ struct LogoView: View {
     var frameWidth: Double
     
     var body: some View {
-        Image("ddg-map-logo")
+        Image(decorative: "ddg-map-logo")
             .resizable()
             .scaledToFit()
             .frame(height: frameWidth)

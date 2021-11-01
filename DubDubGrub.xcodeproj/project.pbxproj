@@ -132,10 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				D3553A0D273026B000A6458B /* AppTapView */,
-				D3553A03272FF86C00A6458B /* LocationListView */,
 				D36F1C18272D84D900765F7B /* LocationDetailView */,
-				D36F1C13272D606000765F7B /* ProfileView */,
+				D3553A03272FF86C00A6458B /* LocationListView */,
 				D375DA5B272BEFF200770BBB /* LocationMapView */,
+				D36F1C13272D606000765F7B /* ProfileView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
