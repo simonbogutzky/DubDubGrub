@@ -19,8 +19,10 @@ final class LocationDetailViewModel: ObservableObject {
                    GridItem(.flexible()),
                    GridItem(.flexible())]
     
-    @Published var alertItem: AlertItem?
+    @Published var checkedInProfiles: [DDGProfile] = []
     @Published var isShowingProfileModal = false
+    @Published var isCheckedIn = false
+    @Published var alertItem: AlertItem?
     
     var location: DDGLocation
     
@@ -45,38 +47,61 @@ final class LocationDetailViewModel: ObservableObject {
     }
     
     func updateCheckInStatus(to checkInStatus: CheckInStatus) {
-            // Retrieve the DDGProfile
-            
-            guard let profileRecordID = CloudKitManager.shared.profileRecordID else {
-                // show an alert
-                return
-            }
-            
-            CloudKitManager.shared.fetchRecord(with: profileRecordID) { [self] result in
-                switch result {
-                    case .success(let record):
-                    // Create a reference to the location
-                        switch checkInStatus {
+        // Retrieve the DDGProfile
+        
+        guard let profileRecordID = CloudKitManager.shared.profileRecordID else {
+            // show an alert
+            return
+        }
+        
+        CloudKitManager.shared.fetchRecord(with: profileRecordID) { [self] result in
+            switch result {
+            case .success(let record):
+                // Create a reference to the location
+                switch checkInStatus {
+                case .checkedIn:
+                    record[DDGProfile.kIsCheckedIn] = CKRecord.Reference(recordID: location.id, action: .none)
+                case .checkedOut:
+                    record[DDGProfile.kIsCheckedIn] = nil
+                }
+                
+                // Save the updated profile to CloudKit
+                CloudKitManager.shared.save(record: record) { result in
+                    let profile = DDGProfile(record: record)
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(_):
+                            switch checkInStatus {
                             case .checkedIn:
-                                record[DDGProfile.kIsCheckedIn] = CKRecord.Reference(recordID: location.id, action: .none)
+                                checkedInProfiles.append(profile)
                             case .checkedOut:
-                                record[DDGProfile.kIsCheckedIn] = nil
-                        }
-                        
-                    // Save the updated profile to CloudKit
-                        CloudKitManager.shared.save(record: record) { result in
-                            switch result {
-                                case .success(_):
-                                    // update our checkedInProfiles array
-                                print("✅ Checked In/Out Successfully")
-                                case .failure(_):
-                                    print("❌ Error saving record")
+                                checkedInProfiles.removeAll(where: { $0.id == profile.id })
                             }
+                            isCheckedIn = checkInStatus == .checkedIn
+                            print("✅ Checked In/Out Successfully")
+                        case .failure(_):
+                            print("❌ Error saving record")
                         }
+                    }
+                }
+                
+            case .failure(_):
+                print("❌ Error fetching record")
+            }
+        }
+    }
+    
+    func getCheckedInProfiles() {
+        CloudKitManager.shared.getCheckInProfiles(for: location.id) { [self] result in
+            DispatchQueue.main.async {
+                switch result {
                     
-                    case .failure(_):
-                        print("❌ Error fetching record")
+                case .success(let profiles):
+                    checkedInProfiles = profiles
+                case .failure(_):
+                    print("Error fetching checkedIn profiles")
                 }
             }
         }
+    }
 }
