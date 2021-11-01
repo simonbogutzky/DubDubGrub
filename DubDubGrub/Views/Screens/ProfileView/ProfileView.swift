@@ -46,6 +46,7 @@ struct ProfileView: View {
                         if viewModel.isCheckedIn {
                             Button {
                                 viewModel.checkOut()
+                                playHaptic()
                             } label: {
                                 Label("Check out", systemImage: "mappin.and.ellipse")
                                     .font(.system(size: 12, weight: .semibold))
