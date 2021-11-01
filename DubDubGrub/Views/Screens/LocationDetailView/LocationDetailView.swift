@@ -103,7 +103,7 @@ struct LocationDetailView: View {
             }
             .accessibilityHidden(viewModel.isShowingProfileModal)
             if viewModel.isShowingProfileModal {
-                Color(.systemBackground)
+                Color(.black)
                     .ignoresSafeArea()
                     .opacity(0.9)
                     .transition(AnyTransition.opacity.animation(.easeOut(duration: 0.35)))
@@ -203,7 +203,22 @@ struct DescriptionView: View {
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.location)))
+            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
         }
+        .environment(\.sizeCategory, .extraSmall)
+        
+        NavigationView {
+            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
+        }
+        
+        NavigationView {
+            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
+        }
+        .environment(\.sizeCategory, .extraExtraExtraLarge)
+        
+        NavigationView {
+            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
+        }
+        .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
     }
 }
