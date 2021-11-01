@@ -162,9 +162,9 @@
 		D3553A03272FF86C00A6458B /* LocationListView */ = {
 			isa = PBXGroup;
 			children = (
+				D3553A04272FF89E00A6458B /* LocationListViewModel.swift */,
 				D373BDF6272A82C600A8A502 /* LocationListView.swift */,
 				D3046A8E272ADD08009A1552 /* LocationCell.swift */,
-				D3553A04272FF89E00A6458B /* LocationListViewModel.swift */,
 			);
 			path = LocationListView;
 			sourceTree = "<group>";
