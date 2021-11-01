@@ -15,6 +15,7 @@
 		D3046AA3272AE690009A1552 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3046AA2272AE690009A1552 /* CloudKit.framework */; };
 		D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31589A0272D153700E0CEDE /* UIImage+Ext.swift */; };
 		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
+		D3553A05272FF89E00A6458B /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3553A04272FF89E00A6458B /* LocationListViewModel.swift */; };
 		D36F1C15272D607800765F7B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F1C14272D607800765F7B /* ProfileViewModel.swift */; };
 		D36F1C17272D740D00765F7B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F1C16272D740D00765F7B /* LoadingView.swift */; };
 		D36F1C1A272D850200765F7B /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F1C19272D850200765F7B /* LocationDetailViewModel.swift */; };
@@ -53,6 +54,7 @@
 		D3046AA2272AE690009A1552 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D31589A0272D153700E0CEDE /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		D3553A04272FF89E00A6458B /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		D36F1C14272D607800765F7B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D36F1C16272D740D00765F7B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D36F1C19272D850200765F7B /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 			children = (
 				D3046A92272AE09C009A1552 /* CustomModifiers.swift */,
 				D3046A9E272AE44C009A1552 /* CustomViews */,
-				D3046A9D272AE445009A1552 /* Cells */,
 				D3046A9C272AE439009A1552 /* Screens */,
 				D37D3036272C16FB00356C3E /* OnboardView.swift */,
 				D37D3038272C179300356C3E /* LogoView.swift */,
@@ -123,21 +124,13 @@
 		D3046A9C272AE439009A1552 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D3553A03272FF86C00A6458B /* LocationListView */,
 				D36F1C18272D84D900765F7B /* LocationDetailView */,
 				D36F1C13272D606000765F7B /* ProfileView */,
 				D375DA5B272BEFF200770BBB /* LocationMapView */,
 				D373BDF2272A827100A8A502 /* AppTabView.swift */,
-				D373BDF6272A82C600A8A502 /* LocationListView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		D3046A9D272AE445009A1552 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D3046A8E272ADD08009A1552 /* LocationCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		D3046A9E272AE44C009A1552 /* CustomViews */ = {
@@ -156,6 +149,16 @@
 				D3046AA2272AE690009A1552 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3553A03272FF86C00A6458B /* LocationListView */ = {
+			isa = PBXGroup;
+			children = (
+				D373BDF6272A82C600A8A502 /* LocationListView.swift */,
+				D3046A8E272ADD08009A1552 /* LocationCell.swift */,
+				D3553A04272FF89E00A6458B /* LocationListViewModel.swift */,
+			);
+			path = LocationListView;
 			sourceTree = "<group>";
 		};
 		D36F1C13272D606000765F7B /* ProfileView */ = {
@@ -365,6 +368,7 @@
 				D3046A95272AE0B8009A1552 /* View+Ext.swift in Sources */,
 				D3046A91272ADD4B009A1552 /* AvatarView.swift in Sources */,
 				D375DA58272BD1E800770BBB /* CKRecord+Ext.swift in Sources */,
+				D3553A05272FF89E00A6458B /* LocationListViewModel.swift in Sources */,
 				D375DA60272BF29200770BBB /* LocationManager.swift in Sources */,
 				D375DA62272BF96500770BBB /* CKAsset+Ext.swift in Sources */,
 				D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */,
