@@ -46,10 +46,12 @@ struct LocationDetailView: View {
                             LocationActionButton(color: .brandPrimary, imageName: "phone.fill")
                         }
                         
-                        Button {
-                            viewModel.updateCheckInStatus(to: !viewModel.isCheckedIn ? .checkedIn : .checkedOut)
-                        } label: {
-                            LocationActionButton(color: .brandPrimary, imageName: "person.fill.checkmark")
+                        if let _ = CloudKitManager.shared.profileRecordID {
+                            Button {
+                                viewModel.updateCheckInStatus(to: !viewModel.isCheckedIn ? .checkedIn : .checkedOut)
+                            } label: {
+                                LocationActionButton(color: !viewModel.isCheckedIn ? .brandPrimary : .grubRed, imageName: !viewModel.isCheckedIn ? "person.fill.checkmark" : "person.fill.xmark")
+                            }
                         }
                     }
                 }
@@ -58,15 +60,27 @@ struct LocationDetailView: View {
                 Text("Who's Here?")
                     .bold()
                     .font(.title2)
-                
-                ScrollView {
-                    LazyVGrid(columns: viewModel.columns) {
-                        ForEach(viewModel.checkedInProfiles) { profile in
-                            FirstNameAvatarView(profile: profile).onTapGesture {
-                                viewModel.isShowingProfileModal = true
+                ZStack {
+                    if viewModel.checkedInProfiles.isEmpty {
+                        Text("Nobody's Here 🙁")
+                            .bold()
+                            .font(.title2)
+                            .foregroundColor(.secondary)
+                            .padding(.top, 30)
+                    } else {
+                    
+                        ScrollView {
+                            LazyVGrid(columns: viewModel.columns) {
+                                ForEach(viewModel.checkedInProfiles) { profile in
+                                    FirstNameAvatarView(profile: profile).onTapGesture {
+                                        viewModel.isShowingProfileModal = true
+                                    }
+                                }
                             }
                         }
                     }
+                    
+                    if viewModel.isLoading { LoadingView() }
                 }
                 
                 Spacer()
@@ -89,6 +103,7 @@ struct LocationDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             viewModel.getCheckedInProfiles()
+            viewModel.getCheckedInStatus()
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
