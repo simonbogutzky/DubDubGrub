@@ -34,20 +34,23 @@ struct LocationDetailView: View {
                             viewModel.getDirectionsToLocation()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "location.fill")
-                                .accessibilityLabel(Text("Get directions"))
                         }
+                        .accessibilityLabel(Text("Get directions"))
                         
                         Link(destination: URL(string: viewModel.location.websiteURL)!, label: {
                             LocationActionButton(color: .brandPrimary, imageName: "network")
-                                .accessibilityLabel(Text("Go to website"))
+                                
                         })
+                            .accessibilityRemoveTraits(.isButton)
+                            .accessibilityLabel(Text("Go to website"))
                         
                         Button {
                             viewModel.callLocation()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "phone.fill")
-                                .accessibilityLabel(Text("Call location"))
                         }
+                        
+                        .accessibilityLabel(Text("Call location"))
                         
                         if let _ = CloudKitManager.shared.profileRecordID {
                             Button {
@@ -67,7 +70,7 @@ struct LocationDetailView: View {
                     .font(.title2)
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityLabel(Text("Who's Here? \(viewModel.checkedInProfiles.count) checked in"))
-                    .accessibilityHint("Bottom section is scollableS")
+                    .accessibilityHint("Bottom section is scollable")
                 ZStack {
                     if viewModel.checkedInProfiles.isEmpty {
                         Text("Nobody's Here 🙁")
@@ -82,9 +85,11 @@ struct LocationDetailView: View {
                                 ForEach(viewModel.checkedInProfiles) { profile in
                                     FirstNameAvatarView(profile: profile)
                                         .accessibilityElement(children: .ignore)
+                                        .accessibilityAddTraits(.isButton)
+                                        .accessibilityHint("Show's \(profile.firstName) profile pop up.")
                                         .accessibilityLabel("\(profile.firstName) \(profile.lastName)")
                                         .onTapGesture {
-                                        viewModel.isShowingProfileModal = true
+                                            viewModel.selectionProfile = profile
                                     }
                                 }
                             }
@@ -96,6 +101,7 @@ struct LocationDetailView: View {
                 
                 Spacer()
             }
+            .accessibilityHidden(viewModel.isShowingProfileModal)
             if viewModel.isShowingProfileModal {
                 Color(.systemBackground)
                     .ignoresSafeArea()
@@ -104,10 +110,12 @@ struct LocationDetailView: View {
                     //.transition(.opacity)
                     .animation(.easeOut)
                     .zIndex(1)
-                ProfileModalView(isShowingProfileModal: $viewModel.isShowingProfileModal, profile: DDGProfile(record: MockData.profile))
+                    .accessibilityHidden(true)
+                
+                ProfileModalView(isShowingProfileModal: $viewModel.isShowingProfileModal, profile: viewModel.selectionProfile!)
                     .transition(.opacity.combined(with: .slide))
                     .animation(.easeOut)
-                    .zIndex(1)
+                    .zIndex(2)
             }
         }
         .navigationTitle(viewModel.location.name)
