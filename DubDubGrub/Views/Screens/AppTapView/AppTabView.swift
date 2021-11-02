@@ -32,8 +32,8 @@ struct AppTabView: View {
         .sheet(isPresented: $viewModel.isShowingOnboardView) {
             OnboardView()
         }
-        .onAppear {
-            CloudKitManager.shared.getUserRecord()
+        .task {
+            try? await CloudKitManager.shared.getUserRecord()
             viewModel.checkIfHasSeenObboard()
         }
     }
