@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
@@ -16,7 +16,7 @@ struct OnboardView: View {
             HStack {
                 Spacer()
                 Button {
-                    presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 } label: {
                     XDismissButton()
                 }

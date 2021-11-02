@@ -36,7 +36,6 @@ struct AppTabView: View {
             CloudKitManager.shared.getUserRecord()
             viewModel.runStartupChecks()
         }
-        .accentColor(.brandPrimary)
     }
 }
 
