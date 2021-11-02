@@ -15,6 +15,7 @@
 		D3046AA3272AE690009A1552 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3046AA2272AE690009A1552 /* CloudKit.framework */; };
 		D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31589A0272D153700E0CEDE /* UIImage+Ext.swift */; };
 		D325D01927313215005F7188 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D01827313215005F7188 /* ProfileSheetView.swift */; };
+		D325D01B27314723005F7188 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D01A27314723005F7188 /* HapticManager.swift */; };
 		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
 		D3553A05272FF89E00A6458B /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3553A04272FF89E00A6458B /* LocationListViewModel.swift */; };
 		D3553A07273004B400A6458B /* MapBallon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3553A06273004B400A6458B /* MapBallon.swift */; };
@@ -58,6 +59,7 @@
 		D3046AA2272AE690009A1552 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D31589A0272D153700E0CEDE /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		D325D01827313215005F7188 /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
+		D325D01A27314723005F7188 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		D3553A04272FF89E00A6458B /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		D3553A06273004B400A6458B /* MapBallon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBallon.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			children = (
 				D375DA53272BCDC800770BBB /* CloudKitManager.swift */,
 				D375DA5F272BF29200770BBB /* LocationManager.swift */,
+				D325D01A27314723005F7188 /* HapticManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				D373BDF5272A829D00A8A502 /* LocationMapView.swift in Sources */,
 				D36F1C1C272D8BD900765F7B /* ProfileModalView.swift in Sources */,
 				D373BDF7272A82C600A8A502 /* LocationListView.swift in Sources */,
+				D325D01B27314723005F7188 /* HapticManager.swift in Sources */,
 				D36F1C1A272D850200765F7B /* LocationDetailViewModel.swift in Sources */,
 				D375DA5D272BF01700770BBB /* LocationMapViewModel.swift in Sources */,
 				D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */,
