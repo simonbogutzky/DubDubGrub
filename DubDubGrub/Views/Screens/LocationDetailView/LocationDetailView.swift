@@ -10,6 +10,7 @@ import SwiftUI
 struct LocationDetailView: View {
     
     @ObservedObject var viewModel: LocationDetailViewModel
+    @Environment(\.sizeCategory) var sizeCategory
     
     var body: some View {
         ZStack {
@@ -81,7 +82,7 @@ struct LocationDetailView: View {
                     } else {
                     
                         ScrollView {
-                            LazyVGrid(columns: viewModel.columns) {
+                            LazyVGrid(columns: viewModel.determineColumns(for: sizeCategory)) {
                                 ForEach(viewModel.checkedInProfiles) { profile in
                                     FirstNameAvatarView(profile: profile)
                                         .accessibilityElement(children: .ignore)
@@ -151,11 +152,13 @@ struct LocationActionButton: View {
 }
 
 struct FirstNameAvatarView: View {
+    @Environment(\.sizeCategory) var sizeCategory
+    
     var profile: DDGProfile
     
     var body: some View {
         VStack {
-            AvatarView(image: profile.createAvatarImage(), size: 64)
+            AvatarView(image: profile.createAvatarImage(), size: sizeCategory >= .accessibilityMedium ? 100 : 64)
             
             Text(profile.firstName)
                 .bold()
@@ -193,23 +196,14 @@ struct DescriptionView: View {
     
     var body: some View {
         Text(text)
-            .lineLimit(3)
             .minimumScaleFactor(0.75)
-            .frame(height: 70)
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
     }
 }
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
-        }
-        .environment(\.sizeCategory, .extraSmall)
-        
-        NavigationView {
-            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
-        }
         
         NavigationView {
             LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
@@ -217,7 +211,7 @@ struct LocationDetailView_Previews: PreviewProvider {
         .environment(\.sizeCategory, .extraExtraExtraLarge)
         
         NavigationView {
-            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
+            LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle))).embedInScrollView()
         }
         .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
     }
