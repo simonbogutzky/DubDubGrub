@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardView: View {
-    @Binding var isShowingOnboardView: Bool
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
@@ -16,7 +16,7 @@ struct OnboardView: View {
             HStack {
                 Spacer()
                 Button {
-                    isShowingOnboardView = false
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     XDismissButton()
                 }
@@ -42,7 +42,7 @@ struct OnboardView: View {
     }
 }
 
-struct OnboadViewInfoView: View {
+fileprivate struct OnboadViewInfoView: View {
     var imageName: String
     var title: String
     var description: String
@@ -67,6 +67,6 @@ struct OnboadViewInfoView: View {
 
 struct OnboardView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardView(isShowingOnboardView: .constant(true))
+        OnboardView()
     }
 }
