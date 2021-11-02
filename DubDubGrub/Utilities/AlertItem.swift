@@ -82,6 +82,13 @@ struct AlertContext {
         message: Text("We were unable to update your profile at this time\n Check your internet connection and try again later or contact customer support if this persists."),
         dismissButton: .default(Text("Ok")))
     
+    //MARK: - LocationListView Errors
+    
+    static let unableToGetAllCheckInProfiles = AlertItem(
+        title: Text("Server Error"),
+        message: Text("We are unable to get users checked into location at this time. \nPlease try again."),
+        dismissButton: .default(Text("Ok")))
+    
     //MARK: - LocationDetailView Errors
     
     static let invalidPhoneNumber = AlertItem(
