@@ -14,6 +14,7 @@
 		D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3046A99272AE20C009A1552 /* DDGButton.swift */; };
 		D3046AA3272AE690009A1552 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3046AA2272AE690009A1552 /* CloudKit.framework */; };
 		D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31589A0272D153700E0CEDE /* UIImage+Ext.swift */; };
+		D325D01927313215005F7188 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D01827313215005F7188 /* ProfileSheetView.swift */; };
 		D32895AA272A908900A93CC4 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32895A9272A908900A93CC4 /* LocationDetailView.swift */; };
 		D3553A05272FF89E00A6458B /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3553A04272FF89E00A6458B /* LocationListViewModel.swift */; };
 		D3553A07273004B400A6458B /* MapBallon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3553A06273004B400A6458B /* MapBallon.swift */; };
@@ -56,6 +57,7 @@
 		D3046AA0272AE679009A1552 /* DubDubGrub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DubDubGrub.entitlements; sourceTree = "<group>"; };
 		D3046AA2272AE690009A1552 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D31589A0272D153700E0CEDE /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		D325D01827313215005F7188 /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
 		D32895A9272A908900A93CC4 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		D3553A04272FF89E00A6458B /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		D3553A06273004B400A6458B /* MapBallon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBallon.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				D36F1C19272D850200765F7B /* LocationDetailViewModel.swift */,
 				D32895A9272A908900A93CC4 /* LocationDetailView.swift */,
 				D36F1C1B272D8BD900765F7B /* ProfileModalView.swift */,
+				D325D01827313215005F7188 /* ProfileSheetView.swift */,
 			);
 			path = LocationDetailView;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				D375DA60272BF29200770BBB /* LocationManager.swift in Sources */,
 				D375DA62272BF96500770BBB /* CKAsset+Ext.swift in Sources */,
 				D37D3037272C16FB00356C3E /* OnboardView.swift in Sources */,
+				D325D01927313215005F7188 /* ProfileSheetView.swift in Sources */,
 				D3046A9A272AE20C009A1552 /* DDGButton.swift in Sources */,
 				D36F1C17272D740D00765F7B /* LoadingView.swift in Sources */,
 				D31589A1272D153700E0CEDE /* UIImage+Ext.swift in Sources */,
