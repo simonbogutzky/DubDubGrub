@@ -15,32 +15,23 @@ struct ProfileView: View {
     var body: some View {
         ZStack {
             VStack {
-                ZStack {
-                    NameBackgroundView()
+                HStack {
+                    ProfileImageView(image: viewModel.avatar)
+                    .onTapGesture { viewModel.isShowingPhotoPicker = true }
                     
-                    HStack {
-                        ZStack {
-                            AvatarView(image: viewModel.avatar, size: 84)
-                            EditImageView()
-                        }
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityAddTraits(.isButton)
-                        .accessibilityLabel(Text("Profile Photo"))
-                        .accessibilityHint(Text("Opens the iPhone's photo picker"))
-                        .padding(.leading, 12)
-                        .onTapGesture { viewModel.isShowingPhotoPicker = true }
+                    VStack (spacing: 1) {
+                        TextField("First Name", text: $viewModel.firstName).profileNameStyle()
                         
-                        VStack (spacing: 1) {
-                            TextField("First Name", text: $viewModel.firstName).profileNameStyle()
-                            
-                            TextField("Last Name", text: $viewModel.lastName).profileNameStyle()
-                            
-                            TextField("Company Name", text: $viewModel.companyName)
-                        }
-                        .padding(.trailing, 16)
+                        TextField("Last Name", text: $viewModel.lastName).profileNameStyle()
+                        
+                        TextField("Company Name", text: $viewModel.companyName)
                     }
-                    .padding()
+                    .padding(.trailing, 16)
                 }
+                .padding(.vertical)
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(16)
+                .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
@@ -52,24 +43,13 @@ struct ProfileView: View {
                             Button {
                                 viewModel.checkOut()
                             } label: {
-                                Label("Check out", systemImage: "mappin.and.ellipse")
-                                    .font(.system(size: 12, weight: .semibold))
-                                    .foregroundColor(.white)
-                                    .padding(10)
-                                    .frame(height: 28)
-                                    .background(Color.grubRed)
-                                    .cornerRadius(8)
+                                CheckOutButton()
                             }
-                            .accessibilityLabel(Text("Check out of current location"))
+                            .disabled(viewModel.isLoading)
                         }
                     }
                     
-                    TextEditor(text: $viewModel.bio)
-                        .frame(height: 100)
-                        .overlay(RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.secondary, lineWidth: 1))
-                        .accessibilityLabel("Bio, \(viewModel.bio)")
-                        .accessibilityHint(Text("This Textfield has a 100 character maximum"))
+                    BioTextEditor(text: $viewModel.bio)
                     
                 }
                 .padding(.horizontal, 20)
@@ -77,9 +57,9 @@ struct ProfileView: View {
                 Spacer()
                 
                 Button {
-                    viewModel.profileContext == .create ? viewModel.createProfile() : viewModel.updateProfile()
+                    viewModel.determineButtonAction()
                 } label: {
-                    DDGButton(title: viewModel.profileContext == .create ? "Create Profile" : "Update Profile")
+                    DDGButton(title: viewModel.buttonTitle)
                 }
                 .padding(.bottom)
             }
@@ -97,9 +77,7 @@ struct ProfileView: View {
                 Image(systemName: "keyboard.chevron.compact.down")
             }
         }
-        .alert(item: $viewModel.alertItem) { alertItem in
-            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
-        }
+        .alert(item: $viewModel.alertItem, content: { $0.alert })
         .sheet(isPresented: $viewModel.isShowingPhotoPicker) {
             PhotoPicker(image: $viewModel.avatar)
         }
@@ -110,7 +88,7 @@ struct ProfileView: View {
     }
 }
 
-struct NameBackgroundView: View {
+fileprivate struct NameBackgroundView: View {
     var body: some View {
         Color(.secondarySystemBackground)
             .frame(height: 130)
@@ -119,18 +97,33 @@ struct NameBackgroundView: View {
     }
 }
 
-struct EditImageView: View {
+
+fileprivate struct ProfileImageView: View {
+    var image: UIImage
+    
     var body: some View {
-        Image(systemName: "square.and.pencil")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 14, height: 14)
-            .foregroundColor(.white)
-            .offset(y: 30)
+        
+        ZStack {
+            AvatarView(image: image, size: 84)
+            Image(systemName: "square.and.pencil")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 14, height: 14)
+                .foregroundColor(.white)
+                .offset(y: 30)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(.isButton)
+        .accessibilityLabel(Text("Profile Photo"))
+        .accessibilityHint(Text("Opens the iPhone's photo picker"))
+        .padding(.leading, 12)
+        
+        
     }
 }
 
-struct CharatersRemainView: View {
+
+fileprivate struct CharatersRemainView: View {
     
     var currentCount: Int
     
@@ -150,6 +143,35 @@ struct CharatersRemainView: View {
             .foregroundColor(.secondary)
     }
 }
+
+
+fileprivate struct CheckOutButton: View {
+    var body: some View {
+        Label("Check out", systemImage: "mappin.and.ellipse")
+            .font(.system(size: 12, weight: .semibold))
+            .foregroundColor(.white)
+            .padding(10)
+            .frame(height: 28)
+            .background(Color.grubRed)
+            .cornerRadius(8)
+            .accessibilityLabel(Text("Check out of current location"))
+    }
+}
+
+
+fileprivate struct BioTextEditor: View {
+    
+    var text: Binding<String>
+    
+    var body: some View {
+        TextEditor(text: text)
+            .frame(height: 100)
+            .overlay(RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.secondary, lineWidth: 1))
+            .accessibilityHint(Text("This Textfield has a 100 character maximum"))
+    }
+}
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

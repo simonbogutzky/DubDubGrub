@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DDGButton: View {
     var title: String
+    var color: Color = .brandPrimary
     
     var body: some View {
         Text(title)
