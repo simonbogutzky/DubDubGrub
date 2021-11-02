@@ -11,6 +11,11 @@ import CloudKit
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
+    @FocusState private var focusedTextField: ProfileTextField?
+    
+    enum ProfileTextField {
+        case firstName, lastName, companyName, bio
+    }
     
     var body: some View {
         ZStack {
@@ -20,11 +25,28 @@ struct ProfileView: View {
                     .onTapGesture { viewModel.isShowingPhotoPicker = true }
                     
                     VStack (spacing: 1) {
-                        TextField("First Name", text: $viewModel.firstName).profileNameStyle()
+                        TextField("First Name", text: $viewModel.firstName)
+                            .profileNameStyle()
+                            .focused($focusedTextField, equals: .firstName)
+                            .onSubmit {
+                                focusedTextField = .lastName
+                            }
+                            .submitLabel(.next)
                         
-                        TextField("Last Name", text: $viewModel.lastName).profileNameStyle()
+                        TextField("Last Name", text: $viewModel.lastName)
+                            .profileNameStyle()
+                            .focused($focusedTextField, equals: .lastName)
+                            .onSubmit {
+                                focusedTextField = .companyName
+                            }
+                            .submitLabel(.next)
                         
                         TextField("Company Name", text: $viewModel.companyName)
+                            .focused($focusedTextField, equals: .companyName)
+                            .onSubmit {
+                                focusedTextField = .bio
+                            }
+                            .submitLabel(.next)
                     }
                     .padding(.trailing, 16)
                 }
@@ -50,7 +72,7 @@ struct ProfileView: View {
                     }
                     
                     BioTextEditor(text: $viewModel.bio)
-                    
+                        .focused($focusedTextField, equals: .bio)
                 }
                 .padding(.horizontal, 20)
                 
@@ -63,6 +85,11 @@ struct ProfileView: View {
                 }
                 .padding(.bottom)
             }
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button("Dismiss", action: { focusedTextField = nil })
+                }
+            }
             
             if viewModel.isLoading {
                 LoadingView()
@@ -70,13 +97,7 @@ struct ProfileView: View {
         }
         .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(DeviceTypes.isiPhone8Standard ? .inline : .automatic)
-        .toolbar {
-            Button {
-                dismissKeyboard()
-            } label: {
-                Image(systemName: "keyboard.chevron.compact.down")
-            }
-        }
+        .ignoresSafeArea(.keyboard)
         .alert(item: $viewModel.alertItem, content: { $0.alert })
         .sheet(isPresented: $viewModel.isShowingPhotoPicker) {
             PhotoPicker(image: $viewModel.avatar)
