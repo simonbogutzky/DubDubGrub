@@ -62,8 +62,8 @@ enum CheckInStatus {
         Task {
             do {
                 let record = try await CloudKitManager.shared.fetchRecord(with: profileRecordID)
-                if let _ = record[DDGProfile.kIsCheckedIn] as? CKRecord.Reference {
-                    isCheckedIn = true
+                if let reference = record[DDGProfile.kIsCheckedIn] as? CKRecord.Reference {
+                    isCheckedIn = reference.recordID == location.id
                 } else {
                     isCheckedIn = false
                 }
